@@ -6,17 +6,17 @@
          margin: 0px;
          width: 40px;
          height:40px;
-         background-color: transparent;
       }
     </style>
   </head>
-  <body>
-
-      <video></video>
+ <body>
+    <button onclick="makeSheep()" >Make Sheep</button>
   </body>
 
   <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
+    const { ipcRenderer } = require('electron');
+    function makeSheep(){
+        ipcRenderer.send('make-sheep');
+    }
   </script>
 </html>
